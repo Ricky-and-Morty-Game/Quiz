@@ -22,10 +22,10 @@ public class Play extends ScoreManager {
         try {
             transaction.begin();
             //This loop will run until the final question. Current demo only has three questions, so loop runs thrice
-            //(Will be changed later to accomadate more questions)
+            //(Will be changed later to accommodate more questions)
             while(selector < 4) {
                 //A quick query that grabs a question from the database and puts it into a question entity object
-                //The SQL used to build the database for this demo is included in the resourses folder
+                //The SQL used to build the database for this demo is included in the resources folder
                 TypedQuery<Questions> grabQuestion = entityManager.createQuery("SELECT q FROM Questions q WHERE id =" + selector, Questions.class);
                 Questions question = grabQuestion.getSingleResult();
                 //The next bloc of code controls the gameplay. Will be expanded in the future once web applet integration is implemented
